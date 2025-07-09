@@ -1,25 +1,76 @@
-@media  only screen and (min-width: 38rem) {
-    
-    header, main, nav, footer {
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
+/* Larger Screens (e.g., Tablets and Desktops) */
+@media (min-width: 768px) {
+    /* Header adjustments for larger screens */
     header {
-        grid-template-columns: 24px auto;
+        padding: 1rem 5%; /* More padding on wider screens */
     }
-.hamburger {
-    display: none;
 
-}
+    header span {
+        font-size: 2rem;
+    }
 
-.navigation ul {
-    display: flex;
-}
+    /* Hide hamburger button on larger screens */
+    .hamburger {
+        display: none;
+    }
 
-.navigation a {
-    border: none;
-}
+    /* Navigation for larger screens */
+    .navigation {
+        position: static; /* Take it out of absolute positioning */
+        transform: translateX(0); /* Always visible */
+        display: flex; /* Arrange links in a row */
+        justify-content: flex-end; /* Align links to the right */
+        background-color: transparent; /* No background color */
+        box-shadow: none;
+        width: auto;
+        flex-grow: 1; /* Allow nav to take remaining space in header if needed */
+    }
 
+    .navigation li {
+        border-bottom: none; /* No borders between links */
+        margin-left: 20px; /* Space out links */
+    }
 
+    .navigation a {
+        padding: 0.5rem 1rem; /* Adjust padding for horizontal links */
+        color: #333; /* Darker color for links in header */
+        background-color: transparent;
+    }
+
+    .navigation a:hover {
+        background-color: rgba(0, 0, 0, 0.05); /* Subtle hover effect */
+        text-decoration: none;
+        border-radius: 5px; /* Slightly rounded corners on hover */
+    }
+
+    .navigation li.current a {
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    /* Integrate navigation into header */
+    header {
+        justify-content: space-between; /* Space out logo/title and nav */
+    }
+
+    header span {
+        margin-right: auto; /* Push navigation to the right */
+    }
+
+    /* Main content padding for larger screens */
+    main {
+        padding: 2rem 5%;
+    }
+
+    /* Footer adjustments */
+    footer {
+        flex-direction: row; /* Arrange items in a row */
+        justify-content: space-between; /* Space out content */
+        padding: 1rem 5%;
+    }
+
+    footer div {
+        margin-bottom: 0; /* No bottom margin on larger screens */
+    }
 }
