@@ -151,7 +151,7 @@ main {
 
 /* Footer Styles */
 footer {
-    background-color: #ffffff;
+    background-color: #333;
     color: #fff;
     padding: 1rem 2%;
     text-align: center;
@@ -174,4 +174,8 @@ footer img {
     vertical-align: middle;
 }
 
-/* Hide
+/* Hide the `width="1" height="1"` on the header image by default */
+header img[width="1"][height="1"] {
+    width: auto;
+    height: auto;
+}
