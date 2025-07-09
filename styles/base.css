@@ -1,181 +1,119 @@
-/* General Body and Typography */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
+* {
+    font-family: "Roboto", sans-serif; /* Changed to Roboto as per your HTML */
     box-sizing: border-box;
-    line-height: 1.6;
-    color: #333; /* A soft dark gray for text */
-    background-color: #f4f4f4; /* A light background */
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 0.5em;
-    color: #222;
+h1 {
+    margin: 1rem 10px;
+    color: #3d405b;
 }
 
-p {
-    margin-bottom: 1em;
+h2 {
+    margin: 1rem 10px;
+    color: #30405b;
 }
 
-a {
-    text-decoration: none;
-    color: #007bff; /* A standard blue for links */
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #0056b3;
-}
-
-/* Header Styles */
 header {
-    background-color: #fff;
-    color: #333;
-    padding: 1rem 2%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: relative; /* Needed for absolute positioning of hamburger menu if used */
-    z-index: 1000;
+    display: grid;
+    grid-template-columns: 24px auto 44px;
+    padding: 5px 0 5px 10px;
+    align-items: end;
+    border: solid 1px #ddd;
+    column-gap: 8px;
 }
 
 header img {
-    height: 50px; /* Adjust as needed */
-    width: auto;
-    margin-right: 10px;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-bottom: 5px;
 }
 
 header span {
-    font-size: 1.5rem;
-    font-weight: 700;
-    flex-grow: 1; /* Allows the span to take up available space */
+    font-size: 1.2rem;
+    color: #30405b;
 }
 
-/* Hamburger Button */
+/**Hamburger**/
+
 .hamburger {
     background: none;
     border: none;
-    font-size: 2rem;
+    color: #30405b;
     cursor: pointer;
-    display: block; /* By default, show for mobile */
-    color: #333;
-    padding: 5px;
-    position: relative;
-    width: 30px;
-    height: 30px;
-}
-
-.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background-color: #333;
-    left: 0;
-    transition: all 0.3s ease-in-out;
-}
-
-.hamburger::before {
-    top: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .hamburger::after {
-    bottom: 5px;
+    content: "\2630";
+    font-size: 2rem;
 }
 
-.hamburger.open::before {
-    transform: rotate(45deg);
-    top: 13px;
+.hamburger.show::after {
+    content: "\00D7";
 }
 
-.hamburger.open::after {
-    transform: rotate(-45deg);
-    bottom: 13px;
-}
-
-/* Navigation Styles (Mobile First) */
 .navigation {
-    list-style: none;
+    display: none;
+}
+
+.navigation.show {
+    display: block;
+}
+
+/* Updated: Removed ul, target li directly within .navigation */
+.navigation li {
+    list-style-type: none; /* Ensure no bullet points */
     margin: 0;
     padding: 0;
-    background-color: #444;
-    position: absolute;
-    top: 100%; /* Position below header */
-    left: 0;
-    width: 100%;
-    transform: translateX(-100%); /* Hidden by default */
-    transition: transform 0.3s ease-in-out;
-    z-index: 999;
-}
-
-.navigation.open {
-    transform: translateX(0); /* Show when open */
-}
-
-.navigation li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.navigation li:last-child {
-    border-bottom: none;
 }
 
 .navigation a {
     display: block;
-    padding: 1rem 2%;
-    color: #fff;
-    text-align: center;
-    transition: background-color 0.3s ease;
+    padding: .8rem 10px;
+    color: #3d405b;
+    text-decoration: none;
+    border-bottom: solid 1px #ddd;
 }
 
 .navigation a:hover {
-    background-color: #555;
-    text-decoration: none;
+    background-color: #e07a5f;
 }
 
-.navigation li.current a {
-    background-color: #007bff;
-    color: #fff;
+.navigation li.current {
+    background-color: #eee;
 }
 
-/* Main Content Area */
-main {
-    padding: 1rem 2%;
-    min-height: calc(100vh - 150px); /* Adjust based on header/footer height */
-}
-
-/* Footer Styles */
+/**FOOTER**/
 footer {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 2%;
+    background-color: #eee;
+    padding: 1rem 10px;
     text-align: center;
-    font-size: 0.9rem;
+}
+
+/* Renamed from .socail to .social to fix typo */
+.social {
+    display: flex;
+    justify-content: center;
+    column-gap: 8px;
+}
+
+.social a {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Allow content to wrap */
+    width: 44px;
+    height: 44px;
+    border: #ccc solid 1px;
+    border-radius: 22px;
 }
 
-footer div {
-    display: flex;
-    gap: 15px; /* Space between social icons */
-    margin-bottom: 0.5rem;
+.social img {
+    width: 22px;
+    height: 22px;
 }
 
-footer img {
-    height: 24px; /* Adjust size for social icons */
-    width: 24px;
-    vertical-align: middle;
+.social a:hover {
+    background-color: #ddd;
 }
 
-/* Hide the `width="1" height="1"` on the header image by default */
-header img[width="1"][height="1"] {
-    width: auto;
-    height: auto;
-}
