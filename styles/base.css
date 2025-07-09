@@ -43,9 +43,9 @@ header {
     z-index: 1000;
 }
 
-header img[width="1"][height="1"] {
+header img {
     width: auto;
-    height: auto;
+    margin-right: 10px;
 }
 
 header span {
