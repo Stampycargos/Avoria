@@ -19,7 +19,7 @@
         position: static; /* Take it out of absolute positioning */
         transform: translateX(0); /* Always visible */
         display: flex; /* Arrange links in a row */
-        justify-content: flex-end; /* Align links to the right */
+        justify-content: flex-start; /* CHANGED: Aligns items to the start (left) */
         background-color: transparent; /* No background color */
         box-shadow: none;
         width: auto;
@@ -28,7 +28,12 @@
 
     .navigation li {
         border-bottom: none; /* No borders between links */
-        margin-left: 20px; /* Space out links */
+        margin-right: 20px; /* CHANGED: Space to the right of each item */
+        margin-left: 0; /* Ensures no leftover left margin */
+    }
+
+    .navigation li:last-child {
+        margin-right: 0; /* Optional: remove margin from the last item */
     }
 
     .navigation a {
@@ -54,9 +59,13 @@
         justify-content: space-between; /* Space out logo/title and nav */
     }
 
-    header span {
-        margin-right: auto; /* Push navigation to the right */
-    }
+    /* REMOVED: header span margin-right: auto; was causing nav to be pushed far right.
+       With justify-content: flex-start on .navigation, it will naturally sit left.
+       If you want space between logo/title and nav, consider adding margin-right to the span or gap to header. */
+    /* header span {
+        margin-right: auto;
+    } */
+
 
     /* Main content padding for larger screens */
     main {
