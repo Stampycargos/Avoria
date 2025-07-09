@@ -1,22 +1,17 @@
-
-
 * {
-    font-family: "josefin Sans", sans-serif;
+    font-family: "Roboto", sans-serif; /* Changed to Roboto as per your HTML */
     box-sizing: border-box;
 }
-
 
 h1 {
     margin: 1rem 10px;
     color: #3d405b;
 }
 
-
 h2 {
     margin: 1rem 10px;
     color: #30405b;
 }
-
 
 header {
     display: grid;
@@ -27,7 +22,6 @@ header {
     column-gap: 8px;
 }
 
-
 header img {
     display: block;
     width: 100%;
@@ -35,15 +29,12 @@ header img {
     padding-bottom: 5px;
 }
 
-
 header span {
     font-size: 1.2rem;
     color: #30405b;
 }
 
-
 /**Hamburger**/
-
 
 .hamburger {
     background: none;
@@ -53,38 +44,29 @@ header span {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
 .hamburger::after {
     content: "\2630";
     font-size: 2rem;
 }
 
-
 .hamburger.show::after {
     content: "\00D7";
-
-
 }
-
-
-
 
 .navigation {
     display: none;
 }
 
-
 .navigation.show {
     display: block;
 }
 
-
-.navigation ul {
-    list-style-type: none;
+/* Updated: Removed ul, target li directly within .navigation */
+.navigation li {
+    list-style-type: none; /* Ensure no bullet points */
     margin: 0;
     padding: 0;
 }
-
 
 .navigation a {
     display: block;
@@ -94,16 +76,13 @@ header span {
     border-bottom: solid 1px #ddd;
 }
 
-
 .navigation a:hover {
     background-color: #e07a5f;
 }
 
-
 .navigation li.current {
     background-color: #eee;
 }
-
 
 /**FOOTER**/
 footer {
@@ -112,15 +91,14 @@ footer {
     text-align: center;
 }
 
-
-.socail {
+/* Renamed from .socail to .social to fix typo */
+.social {
     display: flex;
     justify-content: center;
     column-gap: 8px;
 }
 
-
-.socail a {
+.social a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,22 +108,16 @@ footer {
     border-radius: 22px;
 }
 
-
-.socail img {
+.social img {
     width: 22px;
     height: 22px;
 }
 
-
-.socail a:hover {
+.social a:hover {
     background-color: #ddd;
 }
 
-
-
-
 /**OTHER**/
-
 
 main section {
     background-color: #fff;
@@ -155,7 +127,6 @@ main section {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     box-sizing: border-box;
 }
-
 
 main section h2 {
     background-color: #444;
@@ -167,17 +138,14 @@ main section h2 {
     border-top-right-radius: 5px;
 }
 
-
 .about-me-section p {
     line-height: 1.6;
     color: #555;
 }
 
-
 .student-photo-section {
     text-align: center;
 }
-
 
 .photo-container {
     width: 180px;
@@ -193,13 +161,11 @@ main section h2 {
     overflow: hidden;
 }
 
-
 .photo-container img {
     max-width: 100%;
     height: auto;
     display: block;
 }
-
 
 .course-filters {
     display: flex;
@@ -207,7 +173,6 @@ main section h2 {
     gap: 8px;
     margin-bottom: 15px;
 }
-
 
 .filter-button {
     background-color: #ddd;
@@ -221,11 +186,9 @@ main section h2 {
     text-align: center;
 }
 
-
 .filter-button:hover {
     background-color: #ccc;
 }
-
 
 .filter-button.active {
     background-color: #e07a5f;
@@ -233,14 +196,12 @@ main section h2 {
     border-color: #e07a5f;
 }
 
-
 .course-list {
     display: flex;
     flex-direction: column;
     gap: 8px;
     margin-bottom: 15px;
 }
-
 
 .course-item {
     background-color: #eee;
@@ -251,14 +212,12 @@ main section h2 {
     color: #3d405b;
 }
 
-
 .total-credits {
     text-align: center;
     font-size: 0.9em;
     color: #666;
     margin-top: 10px;
 }
-
 
 footer p {
     margin: 5px 0;
