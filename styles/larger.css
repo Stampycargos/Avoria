@@ -56,11 +56,6 @@
     }
 
 
-    .web-certificate-section {
-        grid-column: 1 / -1;
-    }
-
-
     main section {
         margin: 0;
     }
