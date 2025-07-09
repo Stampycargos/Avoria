@@ -1,0 +1,80 @@
+@media only screen  and (min-width: 38rem) {
+   
+    header, main, nav, footer {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    header {
+        grid-template-columns: 24px auto;
+    }
+.hamburger {
+    display: none;
+
+
+}
+
+
+.navigation {
+    display: block;
+    border-bottom: solid 1px #eee;
+}
+.navigation ul {
+    display: flex;
+}
+.navigation a {
+    border: none;
+}
+}
+
+
+/**OTHER**/
+
+
+@media only screen and (min-width: 38rem) {
+
+
+    header, main, nav, footer {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+
+    .home-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+    }
+
+
+    .about-me-section {
+        grid-column: 1 / 2;
+    }
+
+
+    .student-photo-section {
+        grid-column: 2 / 3;
+    }
+
+
+    .web-certificate-section {
+        grid-column: 1 / -1;
+    }
+
+
+    main section {
+        margin: 0;
+    }
+
+
+    main h1 {
+        grid-column: 1 / -1;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+
+    .filter-button {
+        flex-grow: 0;
+        min-width: 80px;
+    }
+}
